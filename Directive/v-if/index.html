@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" href="https://unpkg.com/bulma/css/bulma.css" />
+	<link rel="stylesheet" href=" https://use.fontawesome.com/releases/v5.6.1/css/all.css" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>V-if Demo</title>
+</head>
+<body>
+	<div id="app5">
+		<p v-if="city === 'Toronto'"> by {{ user }} who lives in {{ city }}</p>
+		<p v-if="city === 'Lagos'"> by {{ user }} who wishes to visit {{ city }}</p>
+		<button v-on:click="changeCity">Change City</button>
+	</div>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="./main.js"></script>
+	<script src="./vue.js"></script>
+</body>
+</html>

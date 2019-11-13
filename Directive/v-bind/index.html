@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" href="https://unpkg.com/bulma/css/bulma.css" />
+	<link rel="stylesheet" href=" https://use.fontawesome.com/releases/v5.6.1/css/all.css" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>V-bind Demo</title>
+</head>
+<body>
+	<div id="app4">
+		<!-- Truyen class kieu Object -->
+		<p v-bind:class='{active:isActive}'>Message: "{{ message }}"</p>
+		<button v-on:click="changeClass">Click here to on/off class</button>
+		<!-- Truyen class kieu Object trong data -->
+		<p v-bind:class='showClass'>Binding Class</p>
+		<!-- Truyen class kieu mang -->
+		<div v-bind:class="[activeClass, errorClass]">Array</div>
+
+		<!-- Truyen style kieu Object -->
+		<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">
+			v-bind style first check
+		</div>
+		<!-- Thay doi cach truyen style -->
+		<div v-bind:style="styleObject">
+			v-bind style second check
+		</div>
+		<!-- Truyen style kieu mang -->
+		<div v-bind:style="[addActive, addError]">
+			v-bind style using array
+		</div>
+	</div>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="./main.js"></script>
+	<script src="./vue.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" href="https://unpkg.com/bulma/css/bulma.css" />
+	<link rel="stylesheet" href=" https://use.fontawesome.com/releases/v5.6.1/css/all.css" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Directive Demo</title>
+</head>
+<body>
+	<div id="app3">
+		<p> This is the first variable {{ variableA }} </p>
+		<p> This is the second variable {{ variableB }} </p>
+		<p> Sum of two variables: {{ sum }}</p>
+		<button v-on:click="caculate">Add</button>
+		<br>
+		<p>{{ alertmessage }}</p>
+		<button v-on:dblclick="alertMessage">Double click to change the message</button>
+		<br>
+		<p v-on:mousedown="mouseDown">{{ mousedown }}</p>
+		<br>
+		<button v-on:mousemove="mouseMove">{{ mousemove }}</button>
+		<br>
+		<input v-on:keypress="keyPress" placeholder="Type something here" />
+		<p>{{textbox}}</p>
+	</div>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="./main.js"></script>
+	<script src="./vue.js"></script>
+</body>
+</html>

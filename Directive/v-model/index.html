@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" href="https://unpkg.com/bulma/css/bulma.css" />
+	<link rel="stylesheet" href=" https://use.fontawesome.com/releases/v5.6.1/css/all.css" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>V-model Demo</title>
+</head>
+<body>
+	<div id="app">
+		<h2>{{ message }}</h2>
+	</div><div id="app7">
+		<!-- input -->
+		<div>
+			<input type="text" v-model="message" placeholder="Type your name here!">
+			<p> Your name is: {{ message }}</p>
+		</div>
+		<!-- Single checkbox -->
+		<div>
+			<p>Single checkbox</p>
+			<input type="checkbox" v-model="checked">
+			<label>{{ checked }}</label>
+		</div>
+		<!-- Multiple checkbox -->
+		<div>
+			<p>Multiple checkbox</p>
+			<input type="checkbox" id="noodles" value="Noodles" v-model="foodordered">
+			<label for="noodles">Noodles</label>
+			<input type="checkbox" id="rice" value="Rice" v-model="foodordered">
+			<label for="rice">Rice</label>
+			<input type="checkbox" id="pancake" value="Pancake" v-model="foodordered">
+			<label for="pancake">Pancake</label>
+			<input type="checkbox" id="chicken" value="Chicken" v-model="foodordered">
+			<label for="chicken">Chicken</label>
+			<p>Food ordered: {{foodordered}}</p>
+		</div>
+		<!-- Radio button -->
+		<div>
+			<p>Radio check</p>
+			<input type="radio" id="noodles2" value="Noodles" v-model="foodchecked">
+			<label for="noodles2">Noodles</label>
+			<input type="radio" id="rice2" value="Rice" v-model="foodchecked">
+			<label for="rice2">Rice</label>
+			<input type="radio" id="pancake2" value="Pancake" v-model="foodchecked">
+			<label for="pancake2">Pancake</label>
+			<input type="radio" id="chicken2" value="Chicken" v-model="foodchecked">
+			<label for="chicken2">Chicken</label>
+			<p>Food checked: {{foodchecked}}</p>
+		</div>
+		<!-- Dropdown menu -->
+		<div>
+			<p>Dropdown menu</p>
+			<select name="language" v-model="selected">
+				<option value="" disabled="true" selected>Choose one food</option>
+				<option value="Noodles" selected>Noodles</option>
+				<option value="Rice" selected>Rice</option>
+				<option value="Pancake" selected>Pancake</option>
+				<option value="Chicken" selected>Chicken</option>
+			</select>
+			<p>Food ordered: {{selected}}</p>
+		</div>
+	</div>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="./main.js"></script>
+	<script src="./vue.js"></script>
+</body>
+</html>
