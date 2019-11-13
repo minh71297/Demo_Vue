@@ -6,19 +6,22 @@
 	<link rel="stylesheet" type="text/css" href="">
 	<link rel="stylesheet" href="https://unpkg.com/bulma/css/bulma.css" />
 	<link rel="stylesheet" href=" https://use.fontawesome.com/releases/v5.6.1/css/all.css" />
-	<title>V-for Demo</title>
+	<title>Lifecycle Hook Demo</title>
 </head>
 <body>
-	<div id="app6">
-		<ul>
-			<li v-for="(number, index) in numbers">{{ index }} {{ number }}</li>
-		</ul>
-		<ul>
-			<li v-for="author in books">{{author.name}}</li>
-		</ul>
+	<div id="app">
+		<template>
+  			<p>I'm text inside the component.</p>
+		</template>
+	</div>
+	<div id="app2">
+		<template>
+  			<p ref="dom-element">{{counter}}</p>
+		</template>
 	</div>
 	<script src="https://unpkg.com/vue"></script>
-	<script src="./main.js"></script>
-	<script src="../../vue.js"></script>
+	<script src="main.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="../vue.js"></script>
 </body>
 </html>
