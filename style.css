@@ -1,0 +1,9 @@
+.active {
+	color: red;
+	border: solid 1px blue;
+}
+
+.error {
+	background-color: grey;
+}
+

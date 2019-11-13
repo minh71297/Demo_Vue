@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Vue</title>
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" href="https://unpkg.com/bulma/css/bulma.css" />
+	<link rel="stylesheet" href=" https://use.fontawesome.com/releases/v5.6.1/css/all.css" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<!-- First Demo about Vue -->
+	<div id="app">
+		<h2>{{ message }}</h2>
+	</div>
+	<br>
+	<!-- End first Demo -->
+
+	<!-- Instance Demo -->
+	<div id="app2">
+		<h3>{{replymessage}}</h3>
+	</div>
+	<div id="verapp2">
+        <h3>{{newreplymessage}}</h3>
+	</div>	
+	<br>
+	<!-- End Instance Demo -->
+
+	<!-- Directive Demo  -->
+	<div id="app3">
+		<p> This is the first variable {{ variableA }} </p>
+		<p> This is the second variable {{ variableB }} </p>
+		<p> Sum of two variables: {{ sum }}</p>
+		<button v-on:click="caculate">Add</button>
+		<br>
+		<p>{{ alertmessage }}</p>
+		<button v-on:dblclick="alertMessage">Double click to change the message</button>
+		<br>
+		<p v-on:mousedown="mouseDown">{{ mousedown }}</p>
+		<br>
+		<button v-on:mousemove="mouseMove">{{ mousemove }}</button>
+		<br>
+		<input v-on:keypress="keyPress" placeholder="Type something here" />
+		<p>{{textbox}}</p>
+	</div>
+	<br>
+	<!-- End Directive Demo -->
+
+	<!-- v-bind Demo -->
+	<div id="app4">
+		<!-- Truyen class kieu Object -->
+		<p v-bind:class='{active:isActive}'>Message: "{{ message }}"</p>
+		<button v-on:click="changeClass">Click here to on/off class</button>
+		<!-- Truyen class kieu Object trong data -->
+		<p v-bind:class='showClass'>Binding Class</p>
+		<!-- Truyen class kieu mang -->
+		<div v-bind:class="[activeClass, errorClass]">Array</div>
+
+		<!-- Truyen style kieu Object -->
+		<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">
+			v-bind style first check
+		</div>
+		<!-- Thay doi cach truyen style -->
+		<div v-bind:style="styleObject">
+			v-bind style second check
+		</div>
+		<!-- Truyen style kieu mang -->
+		<div v-bind:style="[addActive, addError]">
+			v-bind style using array
+		</div>
+	</div>
+	<br>
+	<!-- End v-bind Demo -->
+
+	<!-- v-if Demo -->
+	<div id="app5">
+		<p v-if="city === 'Toronto'"> by {{ user }} who lives in {{ city }}</p>
+		<p v-if="city === 'Lagos'"> by {{ user }} who wishes to visit {{ city }}</p>
+		<button v-on:click="changeCity">Change City</button>
+	</div>
+	<br>
+	<!-- End v-if Demo -->
+
+	<!-- v-for Demo -->
+	<div id="app6">
+		<ul>
+			<li v-for="(number, index) in numbers">{{ index }} {{ number }}</li>
+		</ul>
+		<ul>
+			<li v-for="author in books">{{author.name}}</li>
+		</ul>
+	</div>
+	<br>
+	<!-- End v-for Demo -->
+
+	<!-- v-model Demo -->
+	<div id="app7">
+		<!-- input -->
+		<div>
+			<input type="text" v-model="message" placeholder="Type your name here!">
+			<p> Your name is: {{ message }}</p>
+		</div>
+		<!-- Single checkbox -->
+		<div>
+			<p>Single checkbox</p>
+			<input type="checkbox" v-model="checked">
+			<label>{{ checked }}</label>
+		</div>
+		<!-- Multiple checkbox -->
+		<div>
+			<p>Multiple checkbox</p>
+			<input type="checkbox" id="noodles" value="Noodles" v-model="foodordered">
+			<label for="noodles">Noodles</label>
+			<input type="checkbox" id="rice" value="Rice" v-model="foodordered">
+			<label for="rice">Rice</label>
+			<input type="checkbox" id="pancake" value="Pancake" v-model="foodordered">
+			<label for="pancake">Pancake</label>
+			<input type="checkbox" id="chicken" value="Chicken" v-model="foodordered">
+			<label for="chicken">Chicken</label>
+			<p>Food ordered: {{foodordered}}</p>
+		</div>
+		<!-- Radio button -->
+		<div>
+			<p>Radio check</p>
+			<input type="radio" id="noodles2" value="Noodles" v-model="foodchecked">
+			<label for="noodles2">Noodles</label>
+			<input type="radio" id="rice2" value="Rice" v-model="foodchecked">
+			<label for="rice2">Rice</label>
+			<input type="radio" id="pancake2" value="Pancake" v-model="foodchecked">
+			<label for="pancake2">Pancake</label>
+			<input type="radio" id="chicken2" value="Chicken" v-model="foodchecked">
+			<label for="chicken2">Chicken</label>
+			<p>Food checked: {{foodchecked}}</p>
+		</div>
+		<!-- Dropdown menu -->
+		<div>
+			<p>Dropdown menu</p>
+			<select name="language" v-model="selected">
+				<option value="" disabled="true" selected>Choose one food</option>
+				<option value="Noodles" selected>Noodles</option>
+				<option value="Rice" selected>Rice</option>
+				<option value="Pancake" selected>Pancake</option>
+				<option value="Chicken" selected>Chicken</option>
+			</select>
+			<p>Food ordered: {{selected}}</p>
+		</div>
+	</div>
+	<br>
+	<!-- End v-model Demo -->
+
+	<!-- Computed Properties Demo -->
+	<div id="app8">
+		<h1>{{ convertToUpper }}</h1> 
+	</div>
+	<br>
+	<!-- End Computed Properties Demo -->
+
+	<!-- Watcher Demo -->
+	<div id="app9">
+		<h1>{{name}}</h1>
+		<br>
+		<div>
+			<label>Kilogram</label>
+			<input type="number" name="Kilogram" placeholder="Type a weight" v-model="kg">			
+		</div>
+		<div>
+			<label>Gram</label>
+			<input type="number" name="Gram" placeholder="Type a weight" v-model="gram">			
+		</div>
+	</div>
+	<!-- End Watcher Demo -->
+
+	<div id="app10">
+		<tweetcomponent v-for="tweet in tweets" :key="tweet.id"></tweetcomponent>
+	</div>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="./main.js"></script>
+	<script src="./vue.js"></script>
+</body>
+</html>
