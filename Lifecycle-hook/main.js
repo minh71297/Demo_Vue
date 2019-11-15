@@ -42,14 +42,41 @@ var app2 = new Vue({
 		// Fired every second, should always be true
     	console.log(+this.$refs['dom-element'].textContent === this.counter)
 	},
-	// created() {
-	//     setInterval(() => {
-	//       this.counter++
-	//     }, 2000)
- //  	}
+	created() {
+	    setInterval(() => {
+	      this.counter++
+	    }, 2000)
+  	}
 });
 
-	// beforeDestroy() {
+var app3 = new Vue({
+	el: '#app3',
+	data: {
+      		show: true
+    },
+});
 
-	// },
-	// destroyed() {},
+    Vue.component('test-component', {
+		template: '<div>VueJS {{ content }}</div>',
+		data() {
+		    return {
+		    	content : 'ITMagical',
+		    	interval : ''
+		    }
+	  	},
+	  	beforeDestroy() {
+	  		this.content = null
+	  		delete this.content
+	  		clearInterval(this.interval)
+	  		console.log('beforeDestroy')
+	  	},
+	  	destroyed() {	  		
+	  		console.log('destroyed && content = ' + this.content)
+	  	},
+	  	created() {
+	  		this.interval = setInterval(() => {
+	  			console.log('not removed')
+	  		},1000)
+	  	}
+	})
+	
